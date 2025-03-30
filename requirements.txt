@@ -4,3 +4,4 @@ pandas
 python-dotenv
 zipfile36
 mangum
+uvicorn
