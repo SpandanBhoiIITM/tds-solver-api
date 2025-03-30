@@ -48,12 +48,12 @@ async def process_file(file: UploadFile) -> str:
             # Read CSV file
             with zip_ref.open(csv_files[0]) as csv_file:
                 df = pd.read_csv(csv_file)
-                print("CSV columns:", df.columns)  # Debugging print
+                print("CSV columns:", df.columns)  
                 
                 if "answer" not in df.columns:
                     return "⚠️ 'answer' column not found in CSV."
                 
-                extracted_question = str(df["answer"].iloc[0])  # Extract first question
+                extracted_question = str(df["answer"].iloc[0]) 
                 return await query_openai(extracted_question)  
 
     except zipfile.BadZipFile:
